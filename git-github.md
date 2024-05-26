@@ -10,7 +10,7 @@
 
 <hr>
 
-## Introducción
+## 1. Introducción
 
 **GitHub** es una plataforma de alojamiento de código fuente y colaboración basada en Git. Permite a los desarrolladores trabajar juntos en proyectos desde cualquier lugar. Fundada en 2008, GitHub se ha convertido en un punto de referencia para la comunidad de desarrollo de software, facilitando la colaboración, el seguimiento de problemas, la gestión de proyectos y mucho más.
 
@@ -24,22 +24,28 @@
 
 ### Áreas de Trabajo en Git
 
-Cuando Git inicia el seguimiento con el comando `git init`, crea un **repositorio local** donde se almacenan los archivos del proyecto. Además, establece dos áreas para gestionar los cambios en los archivos, por lo que ahora se pueden identificar tres áreas distintas:
+Cuando Git inicia el seguimiento con el comando `git init`, crea un **_repositorio local_** donde se almacenan los archivos del proyecto. Además, establece dos áreas **_(Directorio de trabajo y Área de ensayo)_** para gestionar los cambios en los archivos, por lo que ahora se pueden identificar tres áreas distintas:
+
 
 1. **Directorio de trabajo:** Es el lugar donde se encuentran los proyectos y donde el usuario trabaja directamente con los archivos del proyecto.
 2. **Área de ensayo (staging area):** Temporalmente almacena los archivos y permite al usuario revisar los cambios antes de confirmarlos en el repositorio local. Los archivos llegan a esta área con el comando `git add`.
 3. **Repositorio local:** Aquí se almacenan las copias que Git hace de los archivos cuando se confirma un cambio utilizando el comando `git commit`. Este repositorio local es la versión oficial del proyecto en ese momento.
 
-Los ficheros en el **Área de ensayo** pueden tener los siguientes estados:
+Los ficheros en el **_Área de ensayo_** pueden tener los siguientes estados:
 
-- **Untracked files:** No tienen seguimiento.
-- **Tracked Files:** Tienen seguimiento.
-- **Not Staged:** Archivo modificado.
-- **Staged:** Archivo listo para ser confirmado.
+- **Untracked files (U):** No tienen seguimiento.
+- **Tracked files (T):** Tienen seguimiento.
+- **Not Staged (M):** Archivo modificado.
+- **Staged (S):** Archivo listo para ser confirmado.
+
+
+
+[⬆️ Subir](#manual-git--github 'Subir')
 
 <hr>
 
-## Configuración rápida de un repositorio
+
+## 2. Configuración rápida de un repositorio
 
 ### Crear un nuevo repositorio
 
@@ -93,6 +99,7 @@ Los ficheros en el **Área de ensayo** pueden tener los siguientes estados:
 
 - La opción `-u` es una abreviatura de `--set-upstream` y establece la rama remota como upstream de la rama local. "Upstream" se refiere a la rama remota principal de la cual la rama local obtiene sus cambios. Esto permite omitir `origin` en futuros comandos `git push` y `git pull`, ya que Git recordará la configuración. Solo es necesario usar `-u` la primera vez.
 
+[⬆️ Subir](#manual-git--github 'Subir')
 
 <hr>
 
@@ -129,6 +136,7 @@ Los ficheros en el **Área de ensayo** pueden tener los siguientes estados:
     ```
 
 
+[⬆️ Subir](#manual-git--github 'Subir')
 
 <hr>
 
@@ -175,6 +183,10 @@ Los ficheros en el **Área de ensayo** pueden tener los siguientes estados:
     git merge origin/<rama-remota>
     ```
 
+**Nota**: Cuando se hace `git merge` se crea automáticamente un `commit de fusión`. Este commit registra la combinación de los cambios de ambas ramas y sirve como punto de unión en el historial de Git.
+
+[⬆️ Subir](#manual-git--github 'Subir')
+
 <hr>
 
 ## Subir el contenido de una rama local a una rama remota
@@ -188,6 +200,8 @@ Los ficheros en el **Área de ensayo** pueden tener los siguientes estados:
     ```bash
     git push origin <rama-remota>
     ```
+
+[⬆️ Subir](#manual-git--github 'Subir')
 
 <hr>
 
@@ -238,9 +252,9 @@ Los ficheros en el **Área de ensayo** pueden tener los siguientes estados:
     git push origin <rama-remota>
     ```
 
-<hr>
+[⬆️ Subir](#manual-git--github 'Subir')
 
-**Nota**: Cuando se hace `git merge` se crea automáticamente un `commit de fusión`. Este commit registra la combinación de los cambios de ambas ramas y sirve como punto de unión en el historial de Git.
+
 
 <hr>
 
@@ -266,6 +280,7 @@ Los ficheros en el **Área de ensayo** pueden tener los siguientes estados:
 | `git config` | Configura opciones específicas de Git, como el nombre de usuario y el correo electrónico. |
 | `git help` | Muestra la ayuda para un comando específico de Git. |
 
+[⬆️ Subir](#manual-git--github 'Subir')
 
 ## Otros comandos...
 | Comando | Descripción |
@@ -284,3 +299,5 @@ Los ficheros en el **Área de ensayo** pueden tener los siguientes estados:
 | `npm start` | Inicia la aplicación Node.js. |
 | `npm test` | Ejecuta las pruebas de la aplicación Node.js. |
 | `npm run build` | Crea una versión de producción de la aplicación Node.js. |
+
+[⬆️ Subir](#manual-git--github 'Subir')
