@@ -1,0 +1,24 @@
+# Archivos de dependencias
+/node_modules
+
+# Archivos de configuración del IDE
+/.vscode
+/.idea
+
+# Archivos de construcción y distribución
+/dist
+/tmp
+/out-tsc
+
+# Archivos de cache
+.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+
+# Archivos de logs
+npm-debug.log
+yarn-error.log
+
+# Archivos de entorno
+.env
