@@ -1,12 +1,13 @@
 # Manual Git & GitHub
 
-- [**Introducción**](#introducción 'Ir a Introducción')
-- [**Configuración rápida de un nuevo repositorio**](#configuración-rápida-de-un-nuevo-repositorio 'Ir a Configuración rápida de un nuevo repositorio')
-- [**Publicar una página web en GitHub**](#publicar-una-página-web-en-github 'Ir a Publicar una página web en GitHub')
-- [**Descargar el contenido de una rama remota a una rama local**](#descargar-el-contenido-de-una-rama-remota-a-una-rama-local 'Ir a Descargar el contenido de una rama remota a una rama local')
-- [**Subir el contenido de una rama local a una rama remota**](#subir-el-contenido-de-una-rama-local-a-una-rama-remota 'Ir a Subir el contenido de una rama local a una rama remota')
-- [**Contribución a una Rama de Funcionalidad y Fusión usando "Merge Recursive"**](#contribución-a-una-rama-de-funcionalidad-y-fusión-usando-merge-recursive 'Ir a Contribución a una Rama de Funcionalidad y Fusión usando "Merge Recursive"')
-- [**Listado de comandos básicos**](#listado-de-comandos-básicos 'Ir a Listado de comandos básicos')
+1. [**Introducción**](#1-introducción 'Ir a Introducción')
+2. [**Configuración rápida de un repositorio**](#2-configuración-rápida-de-un-repositorio 'Ir a Configuración rápida de un repositorio')
+3. [**Publicar una página web en GitHub**](#3-publicar-una-página-web-en-github 'Ir a Publicar una página web en GitHub')
+4. [**Descargar el contenido de una rama remota a una rama local**](#4-descargar-el-contenido-de-una-rama-remota-a-una-rama-local 'Ir a Descargar el contenido de una rama remota a una rama local')
+5. [**Subir el contenido de una rama local a una rama remota**](#5-subir-el-contenido-de-una-rama-local-a-una-rama-remota 'Ir a Subir el contenido de una rama local a una rama remota')
+6. [**Contribución a una Rama de Funcionalidad y Fusión usando "Merge Recursive"**](#6-contribución-a-una-rama-de-funcionalidad-y-fusión-usando-merge-recursive 'Ir a Contribución a una Rama de Funcionalidad y Fusión usando "Merge Recursive"')
+7. [**Listado de comandos básicos**](#7-listado-de-comandos-básicos 'Ir a Listado de comandos básicos')
+
 
 <hr>
 
@@ -26,19 +27,16 @@
 
 Cuando Git inicia el seguimiento con el comando `git init`, crea un **_repositorio local_** donde se almacenan los archivos del proyecto. Además, establece dos áreas **_(Directorio de trabajo y Área de ensayo)_** para gestionar los cambios en los archivos, por lo que ahora se pueden identificar tres áreas distintas:
 
-
 1. **Directorio de trabajo:** Es el lugar donde se encuentran los proyectos y donde el usuario trabaja directamente con los archivos del proyecto.
 2. **Área de ensayo (staging area):** Temporalmente almacena los archivos y permite al usuario revisar los cambios antes de confirmarlos en el repositorio local. Los archivos llegan a esta área con el comando `git add`.
 3. **Repositorio local:** Aquí se almacenan las copias que Git hace de los archivos cuando se confirma un cambio utilizando el comando `git commit`. Este repositorio local es la versión oficial del proyecto en ese momento.
 
-Los ficheros en el **_Área de ensayo_** pueden tener los siguientes estados:
+Los archivos en el **_Área de ensayo_** pueden tener los siguientes estados:
 
 - **Untracked files (U):** No tienen seguimiento.
 - **Tracked files (T):** Tienen seguimiento.
-- **Not Staged (M):** Archivo modificado.
-- **Staged (S):** Archivo listo para ser confirmado.
-
-
+- **Not Staged (M):** Archivos modificados.
+- **Staged (S):** Archivos listos para ser confirmados.
 
 [⬆️ Subir](#manual-git--github 'Subir')
 
@@ -103,7 +101,8 @@ Los ficheros en el **_Área de ensayo_** pueden tener los siguientes estados:
 
 <hr>
 
-## Publicar una página web en GitHub
+
+## 3. Publicar una página web en GitHub
 
 1. Inicializar un nuevo repositorio Git:
     ```bash
@@ -135,12 +134,10 @@ Los ficheros en el **_Área de ensayo_** pueden tener los siguientes estados:
     git push -u origin gh-pages
     ```
 
-
 [⬆️ Subir](#manual-git--github 'Subir')
 
 <hr>
-
-## Descargar el contenido de una rama remota a una rama local
+## 4. Descargar el contenido de una rama remota a una rama local
 
 ### Con `git pull`
 
@@ -189,7 +186,8 @@ Los ficheros en el **_Área de ensayo_** pueden tener los siguientes estados:
 
 <hr>
 
-## Subir el contenido de una rama local a una rama remota
+
+## 5. Subir el contenido de una rama local a una rama remota
 
 1. Cambiar a la rama local (o asegurarse de estar en ella):
     ```bash
@@ -205,7 +203,8 @@ Los ficheros en el **_Área de ensayo_** pueden tener los siguientes estados:
 
 <hr>
 
-## Contribución a una Rama de Funcionalidad y Fusión usando "Merge Recursive"
+
+## 6. Contribución a una Rama de Funcionalidad y Fusión usando "Merge Recursive"
 
 1. Cambiar a la `developer` y asegurarse de tener los últimos cambios:
     ```bash
@@ -254,11 +253,10 @@ Los ficheros en el **_Área de ensayo_** pueden tener los siguientes estados:
 
 [⬆️ Subir](#manual-git--github 'Subir')
 
-
-
 <hr>
 
-## Listado de comandos básicos
+
+## 7. Listado de comandos básicos
 | Comando | Descripción |
 |---------|-------------|
 | `git init` | Inicializa un nuevo repositorio Git en el directorio actual. |
