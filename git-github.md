@@ -1,7 +1,7 @@
 # Manual Git & GitHub
 
 1. [**Introducción**](#1-introducción 'Ir a Introducción')
-2. [**Configuración rápida de un repositorio**](#2-configuración-rápida-de-un-repositorio 'Ir a Configuración rápida de un repositorio')
+2. [**Configuración inicial de un repositorio en local**](#2-Configuración-inicial-de-un-repositorio-en-local 'Configuración inicial de un repositorio en local')
 3. [**Publicar una página web en GitHub**](#3-publicar-una-página-web-en-github 'Ir a Publicar una página web en GitHub')
 4. [**Descargar el contenido de una rama remota a una rama local**](#4-descargar-el-contenido-de-una-rama-remota-a-una-rama-local 'Ir a Descargar el contenido de una rama remota a una rama local')
 5. [**Subir el contenido de una rama local a una rama remota**](#5-subir-el-contenido-de-una-rama-local-a-una-rama-remota 'Ir a Subir el contenido de una rama local a una rama remota')
@@ -43,18 +43,20 @@ Los archivos en el **_Área de ensayo_** pueden tener los siguientes estados:
 <hr>
 
 
-## 2. Configuración rápida de un repositorio
+## 2. Configuración inicial de un repositorio en local
 
-### Crear un nuevo repositorio
+### 2.1 Crear un nuevo repositorio
 
 1. Inicializar un nuevo repositorio:
     ```bash
     git init
     ```
+
 2. Agregar todos los archivos del directorio:
     ```bash
     git add .
     ```
+
 3. Crear el primer commit:
     ```bash
     git commit -m "first commit"
@@ -65,19 +67,19 @@ Los archivos en el **_Área de ensayo_** pueden tener los siguientes estados:
     git branch -M main
     ```
 
-5. Conectar el <repositorio-local> a un repositorio <remoto-remoto>:
+5. Conectar el `<repositorio-local>` a un repositorio `<repositorio-remoto>`:
     ```bash
     git remote add origin [repositorio-remoto]
     ```
 
-6. Empujar los cambios del <repositorio-local> a la rama "main" del <repositorio-remoto>:
+6. Empujar los cambios del `<repositorio-local>` a la rama "main" del `<repositorio-remoto>`:
     ```bash
     git push -u origin main
     ```
 
-### Enviar un repositorio por primera vez
+### 2.2 Enviar un repositorio por primera vez
 
-1. Conectar el <repositorio-local> a un repositorio <remoto-remoto>:
+1. Conectar el `<repositorio-local>` a un repositorio `<repositorio-remoto>`:
     ```bash
     git remote add origin [repositorio-remoto]
     ```
@@ -87,7 +89,7 @@ Los archivos en el **_Área de ensayo_** pueden tener los siguientes estados:
     git branch -M main
     ```
 
-3. Empujar los cambios del <repositorio-local> a la rama "main" del <repositorio-remoto>:
+3. Empujar los cambios del `<repositorio-local>` a la rama "main" del `<repositorio-remoto>`:
     ```bash
     git push -u origin main
     ```
@@ -100,6 +102,7 @@ Los archivos en el **_Área de ensayo_** pueden tener los siguientes estados:
 [⬆️ Subir](#manual-git--github 'Subir')
 
 <hr>
+
 
 
 ## 3. Publicar una página web en GitHub
@@ -137,7 +140,6 @@ Los archivos en el **_Área de ensayo_** pueden tener los siguientes estados:
 [⬆️ Subir](#manual-git--github 'Subir')
 
 <hr>
-
 ## 4. Descargar el contenido de una rama remota a una rama local
 
 ### Con `git pull`
