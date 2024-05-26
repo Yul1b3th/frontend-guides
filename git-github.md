@@ -140,6 +140,7 @@ Los archivos en el **_Área de ensayo_** pueden tener los siguientes estados:
 [⬆️ Subir](#manual-git--github 'Subir')
 
 <hr>
+
 ## 4. Descargar el contenido de una rama remota a una rama local
 
 ### Con `git pull`
@@ -280,6 +281,9 @@ Los archivos en el **_Área de ensayo_** pueden tener los siguientes estados:
 | `git remote` | Administra conexiones a repositorios remotos. |
 | `git config` | Configura opciones específicas de Git, como el nombre de usuario y el correo electrónico. |
 | `git help` | Muestra la ayuda para un comando específico de Git. |
+| `git revert` | Crea un nuevo commit que deshace los cambios realizados en un commit anterior. |
+| `git fetch` | Descarga los cambios del repositorio remoto sin fusionarlos con tu rama actual. |
+
 
 [⬆️ Subir](#manual-git--github 'Subir')
 
