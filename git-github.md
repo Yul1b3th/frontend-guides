@@ -137,6 +137,7 @@ Los archivos en el **_Área de ensayo_** pueden tener los siguientes estados:
 [⬆️ Subir](#manual-git--github 'Subir')
 
 <hr>
+
 ## 4. Descargar el contenido de una rama remota a una rama local
 
 ### Con `git pull`
