@@ -210,10 +210,10 @@ Los archivos en el **_Área de ensayo_** pueden tener los siguientes estados:
 
 ## 6. Contribución a una Rama de Funcionalidad y Fusión usando "Merge Recursive"
 
-1. Cambiar a la `developer` y asegurarse de tener los últimos cambios:
+1. Cambiar a la `develop` y asegurarse de tener los últimos cambios:
     ```bash
-    git switch developer
-    git pull origin developer
+    git switch develop
+    git pull origin develop
     ```
 
 2. Cambiar a la `<rama-remota>` (o crearla si no existe):
@@ -263,7 +263,7 @@ Los archivos en el **_Área de ensayo_** pueden tener los siguientes estados:
 ## 7. Listado de comandos básicos
 | Comando | Descripción |
 |---------|-------------|
-| `git init` | Inicializa un nuevo repositorio Git en el directorio actual. |
+| `git init`  | Inicializa un nuevo repositorio Git en el directorio actual. |
 | `git add` | Agrega archivos al área de preparación de Git. |
 | `git commit` | Crea un nuevo commit con los archivos en el área de preparación. |
 | `git status` | Muestra el estado del repositorio Git. |
