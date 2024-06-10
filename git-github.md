@@ -131,7 +131,7 @@ Los archivos en el **_Área de ensayo_** pueden tener los siguientes estados:
   git help config
   ```
 
-## 3. Configurar Git en un directorio local
+## 3. Configurar Git en un directorio de trabajo
 
 ### 2.1 Crear un nuevo repositorio
 
@@ -325,49 +325,48 @@ el historial de Git.
    git pull origin develop
    ```
 
-2. Cambiar a la `<rama-remota>` (o crearla si no existe):
+2. Cambiar a la `<rama-tarea>` (o crearla si no existe):
 
    ```bash
-   git switch -c <rama-remota>
-   git pull origin <rama-remota>
+   git switch -c <rama-tarea>
+   git pull origin <rama-tarea>
    ```
 
-3. Cambiar a la `<rama-hija-remota>` (o crearla si no existe):
+3. Cambiar a la `<rama-tarea-hija>` (o crearla si no existe):
 
    ```bash
-   git switch -c <rama-hija-remota>
+   git switch -c <rama-tarea-hija>
    ```
 
-4. Realizar los cambios en la rama `<rama-hija-remota>`:
+4. Realizar los cambios en la `<rama-tarea-hija>`:
 
    ```bash
    git add .
-   git commit -m "Mensaje descriptivo de los cambios"
+   git commit -m "Changes"
    ```
 
-5. Cambiar de vuelta a la rama `<rama-remota>`:
+5. Cambiar de vuelta a la `<rama-tarea>`:
 
    ```bash
-   git switch <rama-remota>
+   git switch <rama-tarea>
    ```
 
-6. Fusionar la rama `<rama-hija-remota>` en la rama `<rama-remota>` usando un **merge recursivo**:
+6. Fusionar la `<rama-tarea-hija>` en la `<rama-tarea>` usando un **_merge recursivo_**:
 
    ```bash
-   git merge <rama-hija-remota>
+   git merge <rama-tarea-hija>
    ```
 
-7. Resolver los conflictos manualmente en el editor de código.
-
-8. Hacer un commit para finalizar la fusión:
+7. Resolver los conflictos manualmente en el editor de código (si los hay), luego guardar los cambios:
 
    ```bash
-   git commit -m "Merge branch '<rama-hija-remota>' into <rama-remota>"
+   git add .
+   git commit -m "Merge branch"
    ```
 
-9. Subir los cambios a la rama remota `<rama-remota>`:
+8. Subir los cambios a la `<rama-tarea>`:
    ```bash
-   git push origin <rama-remota>
+   git push origin <rama-tarea>
    ```
 
 [⬆️ Subir](#manual-git--github 'Subir')
