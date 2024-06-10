@@ -63,50 +63,50 @@ Los archivos en el **_Área de ensayo_** pueden tener los siguientes estados:
    git init
    ```
 
-2. Agregar todos los archivos del directorio:
+1. Agregar todos los archivos del directorio:
 
    ```bash
    git add .
    ```
 
-3. Crear el primer commit:
+1. Crear el primer commit:
 
    ```bash
    git commit -m "first commit"
    ```
 
-4. Renombrar la rama actual a "main":
+1. Renombrar la rama actual a "main":
 
    ```bash
    git branch -M main
    ```
 
-5. Conectar el `<repositorio-local>` a un repositorio `<repositorio-remoto>`:
+1. Conectar el `<repositorio-local>` a un repositorio `<repositorio-remoto>` llamado **_origin_**:
 
    ```bash
    git remote add origin [repositorio-remoto]
    ```
 
-6. Subir los cambios del `<repositorio-local>` a la rama "main" del `<repositorio-remoto>`:
+1. Subir los cambios del `<repositorio-local>` a la rama "main" del `<repositorio-remoto>`:
    ```bash
    git push -u origin main
    ```
 
 ### 2.2 Subir un repositorio
 
-1. Conectar el `<repositorio-local>` a un repositorio `<repositorio-remoto>`:
+1. Conectar el `<repositorio-local>` a un repositorio `<repositorio-remoto>` llamado **_origin_**:
 
    ```bash
    git remote add origin [repositorio-remoto]
    ```
 
-2. Renombrar la rama actual a "main":
+1. Renombrar la rama actual a "main":
 
    ```bash
    git branch -M main
    ```
 
-3. Subir los cambios del `<repositorio-local>` a la rama "main" del `<repositorio-remoto>`:
+1. Subir los cambios del `<repositorio-local>` a la rama "main" del `<repositorio-remoto>`:
 
    ```bash
    git push -u origin main
@@ -114,10 +114,10 @@ Los archivos en el **_Área de ensayo_** pueden tener los siguientes estados:
 
    **Nota**
 
-- La opción `-M` es una forma abreviada de `--move --force`. Esto significa que Git intentará cambiar el nombre de la rama, y si ya existe una rama con el nombre `main`, la
+- La bandera `-M` es una forma abreviada de `--move --force`. Esto significa que Git intentará cambiar el nombre de la rama; si ya existe una rama con el nombre `main`, la
   sobrescribirá. Es una forma de asegurarse de que la rama se renombre a `main`, independientemente de si ya existe o no una rama con ese nombre.
 
-- La opción `-u` es una abreviatura de `--set-upstream` y establece la rama remota como upstream de la rama local. "Upstream" se refiere a la rama remota principal de la cual la
+- La bandera `-u` es una abreviatura de `--set-upstream` y establece la rama remota como upstream de la rama local. "Upstream" se refiere a la rama remota principal de la cual la
   rama local obtiene sus cambios. Esto permite omitir `origin` en futuros comandos `git push` y `git pull`, ya que Git recordará la configuración. Solo es necesario usar `-u` la
   primera vez.
 
