@@ -53,7 +53,85 @@ Los archivos en el **_Área de ensayo_** pueden tener los siguientes estados:
 
 <hr>
 
-## 2. Configuración inicial de un repositorio en local
+## 2. Configurar Git en la computadora
+
+- Comprobar si está instalado Git
+
+  ```bash
+  git --version
+  ```
+
+- Mostrar la configuración de Git
+
+  ```bash
+  git config --global --list
+  ```
+
+  \*Esto muestra la configuración global, local y de sistema.
+
+- Asignar el nombre del usuario
+
+  ```bash
+    git config --global user.name "Nombre"
+  ```
+
+- Asignar el email del usuario
+
+  ```bash
+  git config --global user.email email@email.com
+  ```
+
+  \*El mismo email que está registrado en GitHub.
+
+- Configurar interfaz de usuario
+
+  ```bash
+  git config --global user.ui true
+  ```
+
+- Establecer la rama predeterminada al inicializar un repositorio
+
+  ```bash
+  git config --global init.defaultBranch main
+  ```
+
+- Verificar la configuración actual
+
+  ```bash
+  git config --list
+  ```
+
+- Asignar Visual Studio Code como editor de configuración de Git
+
+  ```bash
+  git config --global core.editor "code --wait"
+  git config --global -e
+  ```
+
+- Estandarizar los saltos de línea en Windows
+
+  ```bash
+  git config --global core.autocrlf true
+  ```
+
+- Estandarizar los saltos de línea en Linux/Mac
+
+  ```bash
+  git config --global core.autocrlf input
+  ```
+
+- Ver todas las opciones de configuración en la terminal
+
+  ```bash
+  git config -h
+  ```
+
+- Ver todas las opciones de configuración en el navegador
+  ```bash
+  git help config
+  ```
+
+## 3. Configurar Git en un directorio local
 
 ### 2.1 Crear un nuevo repositorio
 
@@ -63,7 +141,7 @@ Los archivos en el **_Área de ensayo_** pueden tener los siguientes estados:
    git init
    ```
 
-1. Agregar todos los archivos del directorio:
+1. Agregar todos los archivos al área de ensayo (staging area):
 
    ```bash
    git add .
@@ -92,7 +170,7 @@ Los archivos en el **_Área de ensayo_** pueden tener los siguientes estados:
    git push -u origin main
    ```
 
-### 2.2 Subir un repositorio
+### 2.2 Subir un repositorio existente
 
 1. Conectar el `<repositorio-local>` a un repositorio `<repositorio-remoto>` llamado **_origin_**:
 
@@ -133,7 +211,7 @@ Los archivos en el **_Área de ensayo_** pueden tener los siguientes estados:
      git init
    ```
 
-2. Agregar todos los archivos al área de preparación (staging area):
+2. Agregar todos los archivos al área de ensayo (staging area):
 
    ```bash
    git add .
@@ -151,7 +229,7 @@ Los archivos en el **_Área de ensayo_** pueden tener los siguientes estados:
    git branch gh-pages
    ```
 
-5. Agregar un repositorio remoto:
+5. Conectar el `<repositorio-local>` a un repositorio `<repositorio-remoto>` llamado **_origin_**:
 
    ```bash
    git remote add origin [repositorio-remoto]
@@ -367,7 +445,7 @@ el historial de Git.
    git init
    ```
 
-2. Agregar todos los archivos del directorio:
+2. Agregar todos los archivos al área de ensayo (staging area):
 
    ```bash
    git add .
@@ -385,7 +463,7 @@ el historial de Git.
    git switch -c <gh-pages>
    ```
 
-5. Agregar un `<repositorio-remoto>`:
+5. Conectar el `<repositorio-local>` a un repositorio `<repositorio-remoto>` llamado **_origin_**:
 
    ```bash
    git remote add origin [repositorio-remoto]
