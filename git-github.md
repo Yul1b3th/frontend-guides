@@ -1,13 +1,13 @@
 # Manual Git & GitHub
 
 1. [**Introducción**](#1-introducción 'Ir a Introducción')
-1. [**Configuración inicial de un repositorio en local**](#2-Configuración-inicial-de-un-repositorio-en-local 'Configuración inicial de un repositorio en local')
-1. [**Publicar una página web en GitHub**](#3-publicar-una-página-web-en-github 'Ir a Publicar una página web en GitHub')
-1. [**Descargar el contenido de una rama remota a una rama local**](#4-descargar-el-contenido-de-una-rama-remota-a-una-rama-local 'Ir a Descargar el contenido de una rama remota a una rama local')
-1. [**Subir el contenido de una rama local a una rama remota**](#5-subir-el-contenido-de-una-rama-local-a-una-rama-remota 'Ir a Subir el contenido de una rama local a una rama remota')
-1. [**Contribución a una Rama de Funcionalidad y Fusión usando "Merge Recursive"**](#6-contribución-a-una-rama-de-funcionalidad-y-fusión-usando-merge-recursive 'Ir a Contribución a una Rama de Funcionalidad y Fusión usando "Merge Recursive"')
-1. [**Listado de comandos básicos**](#7-listado-de-comandos-básicos 'Ir a Listado de comandos básicos')
-1. [**Pasos para el Despliegue de Angular**](#8-pasos-para-el-despliegue-de-angular 'Ir a Pasos para el Despliegue de Angular')
+2. [**Configurar Git en la computadora**](#2-configurar-git-en-la-computadora 'Ir a Configurar Git en la computadora')
+3. [**Configurar Git en un directorio de trabajo**](#3-configurar-git-en-un-directorio-de-trabajo 'Ir a Configurar Git en un directorio de trabajo')
+4. [**Descargar el contenido de una rama remota a una rama local**](#4-descargar-el-contenido-de-una-rama-remota-a-una-rama-local 'Ir a Descargar el contenido de una rama remota a una rama local')
+5. [**Subir el contenido de una rama local a una rama remota**](#5-subir-el-contenido-de-una-rama-local-a-una-rama-remota 'Ir a Subir el contenido de una rama local a una rama remota')
+6. [**Contribución a una Rama de Funcionalidad y Fusión usando "Merge Recursive"**](#6-contribución-a-una-rama-de-funcionalidad-y-fusión-usando-merge-recursive 'Ir a Contribución a una Rama de Funcionalidad y Fusión usando "Merge Recursive"')
+7. [**Publicación de una Página Web en GitHub**](#7-publicación-de-una-página-web-en-github 'Ir a Publicación de una Página Web en GitHub')
+8. [**Despliegue de una Aplicación Angular**](#8-despliegue-de-una-aplicación-angular 'Ir a Despliegue de una Aplicación Angular')
 
 <hr>
 
@@ -83,6 +83,24 @@ Los archivos en el **_Área de ensayo_** pueden tener los siguientes estados:
 
   \*El mismo email que está registrado en GitHub.
 
+- Modificar el nombre del usuario
+
+  ```bash
+  git config --global --replace-all user.name “Nuevo nombre”
+  ```
+
+- Eliminar el usuario existente
+
+  ```bash
+  git config --global --unset-all user.name
+  ```
+
+- Añadir un nuevo usuario
+
+  ```bash
+  git config --global --add user.name “Nuevo nombre”
+  ```
+
 - Configurar interfaz de usuario
 
   ```bash
@@ -131,9 +149,13 @@ Los archivos en el **_Área de ensayo_** pueden tener los siguientes estados:
   git help config
   ```
 
+[⬆️ Subir](#manual-git--github 'Subir')
+
+<hr>
+
 ## 3. Configurar Git en un directorio de trabajo
 
-### 2.1 Crear un nuevo repositorio
+### 3.1 Crear un nuevo repositorio
 
 1. Inicializar un nuevo repositorio:
 
@@ -170,7 +192,7 @@ Los archivos en el **_Área de ensayo_** pueden tener los siguientes estados:
    git push -u origin main
    ```
 
-### 2.2 Subir un repositorio existente
+### 3.2 Subir un repositorio existente
 
 1. Conectar el `<repositorio-local>` a un repositorio `<repositorio-remoto>` llamado **_origin_**:
 
@@ -198,47 +220,6 @@ Los archivos en el **_Área de ensayo_** pueden tener los siguientes estados:
 - La bandera `-u` es una abreviatura de `--set-upstream` y establece la rama remota como upstream de la rama local. "Upstream" se refiere a la rama remota principal de la cual la
   rama local obtiene sus cambios. Esto permite omitir `origin` en futuros comandos `git push` y `git pull`, ya que Git recordará la configuración. Solo es necesario usar `-u` la
   primera vez.
-
-[⬆️ Subir](#manual-git--github 'Subir')
-
-<hr>
-
-## 3. Publicar una página web en GitHub
-
-1. Inicializar un nuevo repositorio Git:
-
-   ```bash
-     git init
-   ```
-
-2. Agregar todos los archivos al área de ensayo (staging area):
-
-   ```bash
-   git add .
-   ```
-
-3. Hacer un commit con un mensaje:
-
-   ```bash
-   git commit -m "Add compiled files for gh-pages"
-   ```
-
-4. Crear una nueva rama `gh-pages`:
-
-   ```bash
-   git branch gh-pages
-   ```
-
-5. Conectar el `<repositorio-local>` a un repositorio `<repositorio-remoto>` llamado **_origin_**:
-
-   ```bash
-   git remote add origin [repositorio-remoto]
-   ```
-
-6. Subir la rama `gh-pages` al repositorio remoto:
-   ```bash
-   git push -u origin gh-pages
-   ```
 
 [⬆️ Subir](#manual-git--github 'Subir')
 
@@ -373,55 +354,48 @@ el historial de Git.
 
 <hr>
 
-## 7. Listado de comandos básicos
+## 7. Publicación de una Página Web en GitHub
 
-| Comando        | Descripción                                                                               |
-| -------------- | ----------------------------------------------------------------------------------------- |
-| `git init`     | Inicializa un nuevo repositorio Git en el directorio actual.                              |
-| `git add`      | Agrega archivos al área de preparación de Git.                                            |
-| `git commit`   | Crea un nuevo commit con los archivos en el área de preparación.                          |
-| `git status`   | Muestra el estado del repositorio Git.                                                    |
-| `git push`     | Sube los cambios al repositorio remoto.                                                   |
-| `git pull`     | Descarga los cambios del repositorio remoto.                                              |
-| `git clone`    | Clona un repositorio remoto.                                                              |
-| `git branch`   | Muestra, crea o elimina ramas.                                                            |
-| `git checkout` | Cambia a una rama o commit específico.                                                    |
-| `git merge`    | Combina los cambios de una rama a otra.                                                   |
-| `git switch`   | Cambia a una rama específica (a partir de Git 2.23).                                      |
-| `git log`      | Muestra el historial de commits.                                                          |
-| `git diff`     | Muestra las diferencias entre commits, commit y área de preparación, etc.                 |
-| `git stash`    | Guarda los cambios en un área de trabajo sucia temporal.                                  |
-| `git reset`    | Revierte ciertos commits o cambios en el área de preparación.                             |
-| `git remote`   | Administra conexiones a repositorios remotos.                                             |
-| `git config`   | Configura opciones específicas de Git, como el nombre de usuario y el correo electrónico. |
-| `git help`     | Muestra la ayuda para un comando específico de Git.                                       |
-| `git revert`   | Crea un nuevo commit que deshace los cambios realizados en un commit anterior.            |
-| `git fetch`    | Descarga los cambios del repositorio remoto sin fusionarlos con tu rama actual.           |
+1. Inicializar un nuevo repositorio Git:
 
-[⬆️ Subir](#manual-git--github 'Subir')
+   ```bash
+     git init
+   ```
 
-## Otros comandos...
+2. Agregar todos los archivos al área de ensayo (staging area):
 
-| Comando         | Descripción                                              |
-| --------------- | -------------------------------------------------------- |
-| `cd`            | Cambia el directorio actual.                             |
-| `ls`            | Lista todos los archivos en el directorio actual.        |
-| `pwd`           | Muestra el camino del directorio actual.                 |
-| `mkdir`         | Crea un nuevo directorio.                                |
-| `touch`         | Crea un nuevo archivo.                                   |
-| `rm`            | Elimina un archivo.                                      |
-| `cp`            | Copia un archivo.                                        |
-| `mv`            | Mueve o renombra un archivo.                             |
-| `cat`           | Muestra el contenido de un archivo.                      |
-| `echo`          | Imprime texto en la terminal.                            |
-| `npm install`   | Instala las dependencias de un proyecto Node.js.         |
-| `npm start`     | Inicia la aplicación Node.js.                            |
-| `npm test`      | Ejecuta las pruebas de la aplicación Node.js.            |
-| `npm run build` | Crea una versión de producción de la aplicación Node.js. |
+   ```bash
+   git add .
+   ```
+
+3. Hacer un commit con un mensaje:
+
+   ```bash
+   git commit -m "Add compiled files for gh-pages"
+   ```
+
+4. Crear una nueva rama `gh-pages`:
+
+   ```bash
+   git branch gh-pages
+   ```
+
+5. Conectar el `<repositorio-local>` a un repositorio `<repositorio-remoto>` llamado **_origin_**:
+
+   ```bash
+   git remote add origin [repositorio-remoto]
+   ```
+
+6. Subir la rama `gh-pages` al repositorio remoto:
+   ```bash
+   git push -u origin gh-pages
+   ```
 
 [⬆️ Subir](#manual-git--github 'Subir')
 
-## 8. Pasos para el Despliegue de Angular
+<hr>
+
+## 8. Despliegue de una Aplicación Angular
 
 ### 8.1 Creación del Build
 
@@ -478,3 +452,55 @@ el historial de Git.
    ```bash
    git push -f origin gh-pages
    ```
+
+[⬆️ Subir](#manual-git--github 'Subir')
+
+<hr>
+
+## 9. Listado de comandos básicos
+
+| Comando        | Descripción                                                                               |
+| -------------- | ----------------------------------------------------------------------------------------- |
+| `git init`     | Inicializa un nuevo repositorio Git en el directorio actual.                              |
+| `git add`      | Agrega archivos al área de preparación de Git.                                            |
+| `git commit`   | Crea un nuevo commit con los archivos en el área de preparación.                          |
+| `git status`   | Muestra el estado del repositorio Git.                                                    |
+| `git push`     | Sube los cambios al repositorio remoto.                                                   |
+| `git pull`     | Descarga los cambios del repositorio remoto.                                              |
+| `git clone`    | Clona un repositorio remoto.                                                              |
+| `git branch`   | Muestra, crea o elimina ramas.                                                            |
+| `git checkout` | Cambia a una rama o commit específico.                                                    |
+| `git merge`    | Combina los cambios de una rama a otra.                                                   |
+| `git switch`   | Cambia a una rama específica (a partir de Git 2.23).                                      |
+| `git log`      | Muestra el historial de commits.                                                          |
+| `git diff`     | Muestra las diferencias entre commits, commit y área de preparación, etc.                 |
+| `git stash`    | Guarda los cambios en un área de trabajo sucia temporal.                                  |
+| `git reset`    | Revierte ciertos commits o cambios en el área de preparación.                             |
+| `git remote`   | Administra conexiones a repositorios remotos.                                             |
+| `git config`   | Configura opciones específicas de Git, como el nombre de usuario y el correo electrónico. |
+| `git help`     | Muestra la ayuda para un comando específico de Git.                                       |
+| `git revert`   | Crea un nuevo commit que deshace los cambios realizados en un commit anterior.            |
+| `git fetch`    | Descarga los cambios del repositorio remoto sin fusionarlos con tu rama actual.           |
+
+[⬆️ Subir](#manual-git--github 'Subir')
+
+## Otros comandos...
+
+| Comando         | Descripción                                              |
+| --------------- | -------------------------------------------------------- |
+| `cd`            | Cambia el directorio actual.                             |
+| `ls`            | Lista todos los archivos en el directorio actual.        |
+| `pwd`           | Muestra el camino del directorio actual.                 |
+| `mkdir`         | Crea un nuevo directorio.                                |
+| `touch`         | Crea un nuevo archivo.                                   |
+| `rm`            | Elimina un archivo.                                      |
+| `cp`            | Copia un archivo.                                        |
+| `mv`            | Mueve o renombra un archivo.                             |
+| `cat`           | Muestra el contenido de un archivo.                      |
+| `echo`          | Imprime texto en la terminal.                            |
+| `npm install`   | Instala las dependencias de un proyecto Node.js.         |
+| `npm start`     | Inicia la aplicación Node.js.                            |
+| `npm test`      | Ejecuta las pruebas de la aplicación Node.js.            |
+| `npm run build` | Crea una versión de producción de la aplicación Node.js. |
+
+[⬆️ Subir](#manual-git--github 'Subir')
