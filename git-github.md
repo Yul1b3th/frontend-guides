@@ -4,6 +4,10 @@
 2. [**Configurar Git en la computadora**](#2-configurar-git-en-la-computadora 'Ir a Configurar Git en la computadora')
 3. [**Configurar Git en un directorio de trabajo**](#3-configurar-git-en-un-directorio-de-trabajo 'Ir a Configurar Git en un directorio de trabajo')
 4. [**Descargar el contenido de una rama remota a una rama local**](#4-descargar-el-contenido-de-una-rama-remota-a-una-rama-local 'Ir a Descargar el contenido de una rama remota a una rama local')
+
+   - 4.1
+     [**Verificación de la Sincronización entre una Rama Local y Remota**](#41-verificación-de-la-sincronización-entre-una-rama-local-y-remota 'Ir a Verificación de la Sincronización entre una Rama Local y Remota')
+
 5. [**Subir el contenido de una rama local a una rama remota**](#5-subir-el-contenido-de-una-rama-local-a-una-rama-remota 'Ir a Subir el contenido de una rama local a una rama remota')
 6. [**Contribución a una Rama de Funcionalidad y Fusión usando "Merge Recursive"**](#6-contribución-a-una-rama-de-funcionalidad-y-fusión-usando-merge-recursive 'Ir a Contribución a una Rama de Funcionalidad y Fusión usando "Merge Recursive"')
 7. [**Publicación de una Página Web en GitHub**](#7-publicación-de-una-página-web-en-github 'Ir a Publicación de una Página Web en GitHub')
@@ -275,6 +279,40 @@ Los archivos en el **_Área de ensayo_** pueden tener los siguientes estados:
 
 **Nota**: Cuando se hace `git merge` se crea automáticamente un `commit de fusión`. Este commit registra la combinación de los cambios de ambas ramas y sirve como punto de unión en
 el historial de Git.
+
+[⬆️ Subir](#manual-git--github 'Subir')
+
+### 4.1 Verificación de la Sincronización entre una Rama Local y Remota
+
+Para asegurarse de que una rama local está sincronizada con su contraparte remota, puedes seguir estos pasos:
+
+#### 1. Verificar diferencias entre la `<rama-local>` y `<rama-remota>`
+
+Se utiliza el comando `git diff` para comparar la rama `<rama-local>` con `<rama-remota>` (`origin/<rama-remota>`). Si no se muestra ninguna salida, significa que ambas ramas están
+sincronizadas y no hay diferencias.
+
+```bash
+git diff <rama-local> origin/<rama-remota>
+```
+
+#### 2. Comparar los últimos commits en la `<rama-local>` y la `<rama-remota>`
+
+Para asegurarse de que los últimos commits en la `<rama-local>` y la `<rama-remota>` son los mismos, puedes utilizar `git log` para revisar el último commit en cada una de ellas.
+Si los hashes de los commits son iguales, entonces ambas ramas están sincronizadas.
+
+1. Verificar el último commit en la `<rama-local>`:
+
+   ```bash
+   git log <rama-local> -1
+   ```
+
+2. Verificar el último commit en `origin/<rama-remota>`:
+
+   ```bash
+   git log origin/<rama-remota> -1
+   ```
+
+Si los hashes de los commits en ambos comandos son iguales, entonces las `<rama-local>` y `<rama-remota>` están sincronizadas.
 
 [⬆️ Subir](#manual-git--github 'Subir')
 
