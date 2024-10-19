@@ -5,8 +5,7 @@
 3. [**Configurar Git en un directorio de trabajo**](#3-configurar-git-en-un-directorio-de-trabajo 'Ir a Configurar Git en un directorio de trabajo')
 4. [**Descargar el contenido de una rama remota a una rama local**](#4-descargar-el-contenido-de-una-rama-remota-a-una-rama-local 'Ir a Descargar el contenido de una rama remota a una rama local')
 
-   - 4.1
-     [**Verificación de la Sincronización entre una Rama Local y Remota**](#41-verificación-de-la-sincronización-entre-una-rama-local-y-remota 'Ir a Verificación de la Sincronización entre una Rama Local y Remota')
+   - 4.1 [**Verificación de la Sincronización entre una Rama Local y Remota**](#41-verificación-de-la-sincronización-entre-una-rama-local-y-remota 'Ir a Verificación de la Sincronización entre una Rama Local y Remota')
 
 5. [**Subir el contenido de una rama local a una rama remota**](#5-subir-el-contenido-de-una-rama-local-a-una-rama-remota 'Ir a Subir el contenido de una rama local a una rama remota')
 6. [**Contribución a una Rama de Funcionalidad y Fusión usando "Merge Recursive"**](#6-contribución-a-una-rama-de-funcionalidad-y-fusión-usando-merge-recursive 'Ir a Contribución a una Rama de Funcionalidad y Fusión usando "Merge Recursive"')
@@ -17,34 +16,27 @@
 
 ## 1. Introducción
 
-**GitHub** es una plataforma de alojamiento de código fuente y colaboración basada en Git. Permite a los desarrolladores trabajar juntos en proyectos desde cualquier lugar. Fundada
-en 2008, GitHub se ha convertido en un punto de referencia para la comunidad de desarrollo de software, facilitando la colaboración, el seguimiento de problemas, la gestión de
-proyectos y mucho más.
+**GitHub** es una plataforma de alojamiento de código fuente y colaboración basada en Git. Permite a los desarrolladores trabajar juntos en proyectos desde cualquier lugar. Fundada en 2008, GitHub se ha convertido en un punto de referencia para la
+comunidad de desarrollo de software, facilitando la colaboración, el seguimiento de problemas, la gestión de proyectos y mucho más.
 
-**Git** es un software de control de versiones distribuido y de código abierto creado por **_Linus Torvalds_** en 2005 para el desarrollo del kernel de Linux. Este sistema facilita
-la gestión de cambios en el código, permitiendo a los desarrolladores crear ramas, dividir proyectos en diferentes flujos de trabajo y fusionar esas ramas mediante un proceso
-conocido como **_Merge_**. Git se ha convertido en una herramienta fundamental en el desarrollo de software y es la base sobre la cual se construyen las actividades de **GitHub**,
-permitiendo a los usuarios colaborar y gestionar proyectos de software en sus computadoras portátiles o de escritorio de manera eficiente.
+**Git** es un software de control de versiones distribuido y de código abierto creado por **_Linus Torvalds_** en 2005 para el desarrollo del kernel de Linux. Este sistema facilita la gestión de cambios en el código, permitiendo a los desarrolladores
+crear ramas, dividir proyectos en diferentes flujos de trabajo y fusionar esas ramas mediante un proceso conocido como **_Merge_**. Git se ha convertido en una herramienta fundamental en el desarrollo de software y es la base sobre la cual se
+construyen las actividades de **GitHub**, permitiendo a los usuarios colaborar y gestionar proyectos de software en sus computadoras portátiles o de escritorio de manera eficiente.
 
 ### Tipos de Merge
 
-1. **Merge Fast-Forward (Avance rápido):** Ocurre cuando la rama que se desea fusionar tiene una secuencia de commits que se pueden aplicar fácilmente a la rama de destino sin
-   necesidad de crear un nuevo commit de fusión.
-2. **Merge Recursive (Recursivo):** Se utiliza cuando la historia de la rama que se desea fusionar y la historia de la rama de destino han divergido. Git crea un nuevo commit de
-   fusión que combina los cambios de ambas ramas.
-3. **Merge Octopus (Pulpo):** Se utiliza cuando se desean fusionar más de dos ramas a la vez. Git intenta fusionar las ramas de manera simultánea, creando un nuevo commit de fusión
-   que combina los cambios de todas las ramas involucradas.
+1. **Merge Fast-Forward (Avance rápido):** Ocurre cuando la rama que se desea fusionar tiene una secuencia de commits que se pueden aplicar fácilmente a la rama de destino sin necesidad de crear un nuevo commit de fusión.
+2. **Merge Recursive (Recursivo):** Se utiliza cuando la historia de la rama que se desea fusionar y la historia de la rama de destino han divergido. Git crea un nuevo commit de fusión que combina los cambios de ambas ramas.
+3. **Merge Octopus (Pulpo):** Se utiliza cuando se desean fusionar más de dos ramas a la vez. Git intenta fusionar las ramas de manera simultánea, creando un nuevo commit de fusión que combina los cambios de todas las ramas involucradas.
 
 ### Áreas de Trabajo en Git
 
-Cuando Git inicia el seguimiento con el comando `git init`, crea un **_repositorio local_** donde se almacenan los archivos del proyecto. Además, establece dos áreas **_(Directorio
-de trabajo y Área de ensayo)_** para gestionar los cambios en los archivos, por lo que ahora se pueden identificar tres áreas distintas:
+Cuando Git inicia el seguimiento con el comando `git init`, crea un **_repositorio local_** donde se almacenan los archivos del proyecto. Además, establece dos áreas **_(Directorio de trabajo y Área de ensayo)_** para gestionar los cambios en los
+archivos, por lo que ahora se pueden identificar tres áreas distintas:
 
 1. **Directorio de trabajo:** Es el lugar donde se encuentran los proyectos y donde el usuario trabaja directamente con los archivos del proyecto.
-2. **Área de ensayo (staging area):** Temporalmente almacena los archivos y permite al usuario revisar los cambios antes de confirmarlos en el repositorio local. Los archivos
-   llegan a esta área con el comando `git add`.
-3. **Repositorio local:** Aquí se almacenan las copias que Git hace de los archivos cuando se confirma un cambio utilizando el comando `git commit`. Este repositorio local es la
-   versión oficial del proyecto en ese momento.
+2. **Área de ensayo (staging area):** Temporalmente almacena los archivos y permite al usuario revisar los cambios antes de confirmarlos en el repositorio local. Los archivos llegan a esta área con el comando `git add`.
+3. **Repositorio local:** Aquí se almacenan las copias que Git hace de los archivos cuando se confirma un cambio utilizando el comando `git commit`. Este repositorio local es la versión oficial del proyecto en ese momento.
 
 Los archivos en el **_Área de ensayo_** pueden tener los siguientes estados:
 
@@ -218,12 +210,11 @@ Los archivos en el **_Área de ensayo_** pueden tener los siguientes estados:
 
    **Nota**
 
-- La bandera `-M` es una forma abreviada de `--move --force`. Esto significa que Git intentará cambiar el nombre de la rama; si ya existe una rama con el nombre `main`, la
-  sobrescribirá. Es una forma de asegurarse de que la rama se renombre a `main`, independientemente de si ya existe o no una rama con ese nombre.
+- La bandera `-M` es una forma abreviada de `--move --force`. Esto significa que Git intentará cambiar el nombre de la rama; si ya existe una rama con el nombre `main`, la sobrescribirá. Es una forma de asegurarse de que la rama se renombre a `main`,
+  independientemente de si ya existe o no una rama con ese nombre.
 
-- La bandera `-u` es una abreviatura de `--set-upstream` y establece la rama remota como upstream de la rama local. "Upstream" se refiere a la rama remota principal de la cual la
-  rama local obtiene sus cambios. Esto permite omitir `origin` en futuros comandos `git push` y `git pull`, ya que Git recordará la configuración. Solo es necesario usar `-u` la
-  primera vez.
+- La bandera `-u` es una abreviatura de `--set-upstream` y establece la rama remota como upstream de la rama local. "Upstream" se refiere a la rama remota principal de la cual la rama local obtiene sus cambios. Esto permite omitir `origin` en futuros
+  comandos `git push` y `git pull`, ya que Git recordará la configuración. Solo es necesario usar `-u` la primera vez.
 
 [⬆️ Subir](#manual-git--github 'Subir')
 
@@ -277,8 +268,7 @@ Los archivos en el **_Área de ensayo_** pueden tener los siguientes estados:
    git merge origin/<rama-remota>
    ```
 
-**Nota**: Cuando se hace `git merge` se crea automáticamente un `commit de fusión`. Este commit registra la combinación de los cambios de ambas ramas y sirve como punto de unión en
-el historial de Git.
+**Nota**: Cuando se hace `git merge` se crea automáticamente un `commit de fusión`. Este commit registra la combinación de los cambios de ambas ramas y sirve como punto de unión en el historial de Git.
 
 [⬆️ Subir](#manual-git--github 'Subir')
 
@@ -288,8 +278,7 @@ Para asegurarse de que una rama local está sincronizada con su contraparte remo
 
 #### 1. Verificar diferencias entre la `<rama-local>` y `<rama-remota>`
 
-Se utiliza el comando `git diff` para comparar la rama `<rama-local>` con `<rama-remota>` (`origin/<rama-remota>`). Si no se muestra ninguna salida, significa que ambas ramas están
-sincronizadas y no hay diferencias.
+Se utiliza el comando `git diff` para comparar la rama `<rama-local>` con `<rama-remota>` (`origin/<rama-remota>`). Si no se muestra ninguna salida, significa que ambas ramas están sincronizadas y no hay diferencias.
 
 ```bash
 git diff <rama-local> origin/<rama-remota>
@@ -297,8 +286,8 @@ git diff <rama-local> origin/<rama-remota>
 
 #### 2. Comparar los últimos commits en la `<rama-local>` y la `<rama-remota>`
 
-Para asegurarse de que los últimos commits en la `<rama-local>` y la `<rama-remota>` son los mismos, puedes utilizar `git log` para revisar el último commit en cada una de ellas.
-Si los hashes de los commits son iguales, entonces ambas ramas están sincronizadas.
+Para asegurarse de que los últimos commits en la `<rama-local>` y la `<rama-remota>` son los mismos, puedes utilizar `git log` para revisar el último commit en cada una de ellas. Si los hashes de los commits son iguales, entonces ambas ramas están
+sincronizadas.
 
 1. Verificar el último commit en la `<rama-local>`:
 
@@ -320,6 +309,8 @@ Si los hashes de los commits en ambos comandos son iguales, entonces las `<rama-
 
 ## 5. Subir el contenido de una rama local a una rama remota
 
+### Pasos para subir cambios a la rama remota:
+
 1. Cambiar a la rama local (o asegurarse de estar en ella):
 
    ```bash
@@ -329,6 +320,19 @@ Si los hashes de los commits en ambos comandos son iguales, entonces las `<rama-
 2. Subir los commits locales a la rama remota:
    ```bash
    git push origin <rama-remota>
+   ```
+
+### Pasos para subir el contenido de un commit anterior:
+
+1. Restablecer a un commit específico:
+
+   ```bash
+   git reset --hard <commit>
+   ```
+
+2. Forzar el push:
+   ```bash
+   git push origin main --force
    ```
 
 [⬆️ Subir](#manual-git--github 'Subir')
